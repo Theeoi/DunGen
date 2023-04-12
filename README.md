@@ -1,16 +1,18 @@
 # DunGen
 
+Generate random rouge-like dungeons in a handy JSON format.
 DunGen is a random dungeon generator based on 'Appendix A: Random Dungeon'
-presented in the DnD 5e Dungeon Master's Guide.
+presented in the DnD 5e Dungeon Master's Guide. Presented in a handy JSON
+format to allow use in multiple applications.
 
 ## General Information
 
 There are many random dungeon generators out there. However, they are often
 very specific in their purpose; generating a tilemap in a pre determined style
 or being generated inside a bigger game. The goal of DunGen is to be a simple
-python module designed to output a random dungeon in JSON format from a set of
-starting parameters. What the user does with the dungeon after that is up to
-them!
+set of python modules designed to output a random dungeon in JSON format from a
+set of starting parameters. What the user does with the dungeon after that is up
+to them!
 
 ### Technologies
 
