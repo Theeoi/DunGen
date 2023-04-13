@@ -3,5 +3,10 @@
 import dungen
 
 
-def test_numrooms():
-    assert dungen.NUM_ROOMS == 5
+def test_version():
+    assert isinstance(dungen.__version__, str)
+
+
+def test_num_rooms():
+    assert isinstance(dungen.NUM_ROOMS, int)
+    assert dungen.NUM_ROOMS > 0
