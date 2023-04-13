@@ -2,4 +2,4 @@
 
 [generation]
   max_chambers = 5
-  mulitilevel = False
+  multilevel = false
