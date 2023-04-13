@@ -1,5 +1,5 @@
 # config.toml
 
 [generation]
-  rooms = 5
+  max_chambers = 5
   mulitilevel = False
