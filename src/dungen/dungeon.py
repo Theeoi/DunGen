@@ -21,8 +21,6 @@ class Door:
 @dataclass
 class Chamber:
     "Class of a dungeon chamber"
-    start: bool = False
-    shape: str
-    size: tuple[int]
-    door: Door
-    passage: Passage
+    start: bool = False  # determines which table to roll from
+    dimensions: dict  # describes the shape and size of the chamber
+    pathways: dict  # mapping cardinal direction to doors and passages if any.
