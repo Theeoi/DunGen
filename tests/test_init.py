@@ -10,3 +10,7 @@ def test_version():
 def test_num_rooms():
     assert isinstance(dungen.NUM_ROOMS, int)
     assert dungen.NUM_ROOMS > 0
+
+
+def test_multilevel():
+    assert isinstance(dungen.MULTILEVEL, bool)

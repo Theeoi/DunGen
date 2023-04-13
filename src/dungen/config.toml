@@ -2,3 +2,4 @@
 
 [generation]
   rooms = 5
+  mulitilevel = False

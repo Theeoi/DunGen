@@ -16,3 +16,4 @@ __version__ = "0.0.1"
 _cfg = tomllib.loads(resources.read_text("dungen", "config.toml"))
 
 NUM_ROOMS: int = _cfg["generation"]["rooms"]
+MULTILEVEL: bool = _cfg["generation"]["multilevel"]
