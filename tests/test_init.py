@@ -7,9 +7,9 @@ def test_version():
     assert isinstance(dungen.__version__, str)
 
 
-def test_num_rooms():
-    assert isinstance(dungen.NUM_ROOMS, int)
-    assert dungen.NUM_ROOMS > 0
+def test_max_chambers():
+    assert isinstance(dungen.MAX_CHAMBERS, int)
+    assert dungen.MAX_CHAMBERS > 0
 
 
 def test_multilevel():

@@ -15,5 +15,5 @@ __version__ = "0.0.1"
 # Load configuration variables
 _cfg = tomllib.loads(resources.read_text("dungen", "config.toml"))
 
-NUM_ROOMS: int = _cfg["generation"]["rooms"]
+MAX_CHAMBERS: int = _cfg["generation"]["max_chambers"]
 MULTILEVEL: bool = _cfg["generation"]["multilevel"]
