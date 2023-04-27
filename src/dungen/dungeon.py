@@ -8,12 +8,101 @@ Defines dungeon structures such as chambers, passages and doors.
 import dungen.helpers as helpers
 
 
+# TODO: Implement Passage class
 class Passage:
     "Class of a dungeon passage"
+
+    def __repr__(self):
+        return "Passage()"
+
+    def __str__(self):
+        return "Passage:"
 
 
 class Door:
     "Class of a dungeon door"
+
+    def __init__(self, origin_direction: helpers.CardinalDirection):
+        self.origin_direction = origin_direction
+        self.type: dict = self.get_door_type()
+        self.beyond = self.get_beyond_door()
+
+        print(self)
+
+    def __repr__(self):
+        return f"Door({self.origin_direction})"
+
+    def __str__(self):
+        return ("Door:\n"
+                f"\t{self.origin_direction=}\n"
+                f"\t{self.type=}\n"
+                f"\t{self.beyond=}\n"
+                )
+
+    def get_door_type(self) -> dict:
+        """
+        Method returning the type of door and whether it is locked or not.
+        """
+        door = {
+            "type": None,
+            "locked": None
+        }
+        rand: int = helpers.rolldice(20)
+        if rand in helpers.rangeroll(1, 10):
+            door["type"] = "wooden"
+            door["locked"] = False
+        elif rand in helpers.rangeroll(11, 12):
+            door["type"] = "wooden"
+            door["locked"] = True
+        elif rand in helpers.rangeroll(13, 13):
+            door["type"] = "stone"
+            door["locked"] = False
+        elif rand in helpers.rangeroll(14, 14):
+            door["type"] = "stone"
+            door["locked"] = True
+        elif rand in helpers.rangeroll(15, 15):
+            door["type"] = "iron"
+            door["locked"] = False
+        elif rand in helpers.rangeroll(16, 16):
+            door["type"] = "iron"
+            door["locked"] = True
+        elif rand in helpers.rangeroll(17, 17):
+            door["type"] = "portcullis"
+            door["locked"] = False
+        elif rand in helpers.rangeroll(18, 18):
+            door["type"] = "portcullis"
+            door["locked"] = True
+        elif rand in helpers.rangeroll(19, 19):
+            door["type"] = "secret"
+            door["locked"] = False
+        elif rand in helpers.rangeroll(20, 20):
+            door["type"] = "secret"
+            door["locked"] = True
+        else:
+            raise ValueError(f"Invalid diceroll: {rand}")
+
+        return door
+
+    # TODO: Fully implement this method
+    def get_beyond_door(self) -> str:
+        """
+        Method returning what is beyond a door.
+        """
+        rand = helpers.rolldice(20)
+        if rand in helpers.rangeroll(1, 2):
+            beyond = "T-intersection"
+        elif rand in helpers.rangeroll(3, 8):
+            beyond = "20ft corridor"
+        elif rand in helpers.rangeroll(9, 18):
+            beyond = "Chamber"
+        elif rand in helpers.rangeroll(19, 19):
+            beyond = "Stairs"
+        elif rand in helpers.rangeroll(20, 20):
+            beyond = "TRAP!"
+        else:
+            raise ValueError(f"Invalid diceroll: {rand}")
+
+        return beyond
 
 
 class Chamber:
