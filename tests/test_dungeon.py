@@ -20,14 +20,14 @@ def test_chamber_dimensions():
 
 def test_chamber_pathways():
     chamber = Chamber(helpers.CardinalDirection.NORTH)
-    pathways = chamber.get_pathways()
-    assert set(pathways.keys()) == set(["North", "East", "South", "West"])
-    for path in pathways.values():
-        assert isinstance(path, list)
+    exits = chamber.get_exits()
+    assert set(exits.keys()) == set(["North", "East", "South", "West"])
+    for exit in exits.values():
+        assert isinstance(exit, list)
 
 
 def test_chamber_num_pathways():
     chamber = Chamber(helpers.CardinalDirection.NORTH)
-    num_pathways = chamber.get_num_pathways()
-    assert isinstance(num_pathways, int)
-    assert 0 <= num_pathways <= 4
+    num_exits = chamber.get_num_exits()
+    assert isinstance(num_exits, int)
+    assert 0 <= num_exits <= 4
