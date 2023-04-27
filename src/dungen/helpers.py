@@ -16,7 +16,10 @@ class CardinalDirection(Enum):
     SOUTH = 180
     WEST = 270
 
-    def __str__(self):
+    def __repr__(self) -> str:
+        return f"CardinalDirection({self.name})"
+
+    def __str__(self) -> str:
         return self.name.title()
 
     def turn(self, angle) -> CardinalDirection:
@@ -27,3 +30,8 @@ class CardinalDirection(Enum):
 def rolldice(max) -> int:
     "Returns an integer between 1 and {max}."
     return random.randint(1, max)
+
+
+def rangeroll(min, max) -> list[int]:
+    "Returns a list of integers between min and max (inclusive!)"
+    return list(range(min, max+1))

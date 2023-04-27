@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from dungen.helpers import CardinalDirection, rolldice
+from dungen.helpers import CardinalDirection, rolldice, rangeroll
 
 
 def test_direction_str():
@@ -30,3 +30,11 @@ def test_rolldice():
             result = rolldice(max_value)
             assert isinstance(result, int)
             assert result >= 1 and result <= max_value
+
+
+def test_rangeroll():
+    for min, max in [(1, 5), (6, 11), (14, 20), (13, 13)]:
+        result = rangeroll(min, max)
+        assert len(result) == (max - min) + 1
+        assert result[-1] == max
+        assert result[0] == min
